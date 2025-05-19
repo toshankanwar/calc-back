@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "https://calculator-app-dun-three.vercel.app"}})  # Enable CORS for all routes
 
 @app.route('/add', methods=['POST'])
 def add_numbers():
